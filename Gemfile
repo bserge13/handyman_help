@@ -53,7 +53,7 @@ group :development, :test do
   gem "launchy"
   gem "simplecov"
   gem "shoulda-matchers"
-
+  gem "rspec-rails"
 end
 
 group :development do
