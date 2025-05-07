@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_07_113528) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_07_113955) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email"
+    t.bigint "workorder_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workorder_id"], name: "index_admins_on_workorder_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -23,4 +31,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_07_113528) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "workorders", force: :cascade do |t|
+    t.string "description"
+    t.string "work_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "admins", "workorders"
 end
