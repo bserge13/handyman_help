@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_07_113955) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_07_114339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_07_113955) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "workorder_id"
+    t.index ["workorder_id"], name: "index_customers_on_workorder_id"
   end
 
   create_table "workorders", force: :cascade do |t|
@@ -39,4 +41,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_07_113955) do
   end
 
   add_foreign_key "admins", "workorders"
+  add_foreign_key "customers", "workorders"
 end
