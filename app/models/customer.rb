@@ -1,6 +1,6 @@
 class Customer < ApplicationRecord
     belongs_to :workorder
-    # has_many :admins, through: :workorder
+    has_many :admins, through: :workorder
 
     validates :name, :phone_number, :address, 
     :email, :workorder_id, presence: true
