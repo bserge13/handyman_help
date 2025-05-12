@@ -8,7 +8,7 @@ RSpec.describe Admin, type: :model do
 
     describe 'validations' do 
         subject { described_class.create!(email: 'admin@example.com', workorder: Workorder.create!(description: "Test", work_type: "Repair")) }
-
+        
         it { should validate_presence_of :email }
         it { should validate_uniqueness_of(:email) }
         it { should allow_value('user@example.com').for(:email) }
