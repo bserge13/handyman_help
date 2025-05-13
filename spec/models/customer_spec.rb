@@ -7,8 +7,9 @@ RSpec.describe Customer, type: :model do
     end
 
     describe 'validations' do 
-        subject { described_class.create!(name: 'Ernie', email: 'admin@example.com', address: '123 Mulberry Lane', phone_number: '867-5309', workorder: Workorder.create!(description: "Test", work_type: "Repair")) }
-
+        subject { described_class.create!(name: 'Ernie', email: 'admin@example.com', 
+        address: '123 Mulberry Lane', phone_number: '867-5309', workorder: Workorder.create!(description: "Test", work_type: "Repair")) }
+        
         it { should validate_presence_of :name }
         it { should validate_presence_of :phone_number }
         it { should validate_presence_of :address }
