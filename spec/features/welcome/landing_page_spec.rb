@@ -7,5 +7,12 @@ RSpec.describe 'Landing Page', type: :feature do
 
             expect(page).to have_content('Welcome to Handyman Helper!')
         end
+
+        it 'has buttons for creating a profile or logging in' do 
+            visit root_path
+
+            expect(page).to have_button('Login')
+            expect(page).to have_button('Create Profile')
+        end
     end
 end 
