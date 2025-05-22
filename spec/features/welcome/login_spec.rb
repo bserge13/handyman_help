@@ -7,5 +7,8 @@ RSpec.describe 'Landing Page', type: :feature do
 
             expect(page).to have_content('Welcome to Handyman Helper!')
         end
+
+        it 'has a login field' do 
+        end
     end
 end 
