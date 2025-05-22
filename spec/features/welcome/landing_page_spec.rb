@@ -11,6 +11,10 @@ RSpec.describe 'Landing Page', type: :feature do
         it 'has buttons for creating a profile or logging in' do 
             visit root_path
 
+            expect(page).to have_field :email
+            expect(page).to have_field :password 
+            expect(page).to have_button('login')
+
             expect(page).to have_button('Login')
             expect(page).to have_button('Create Profile')
         end
