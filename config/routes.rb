@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # Landing page
   root "welcome#index"
+
+  get '/login', to: 'customers#login_form'
 end
