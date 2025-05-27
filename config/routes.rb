@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   get '/login', to: 'customers#login_form'
+  # post '/login', to: 'customer#login'
 end
