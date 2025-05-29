@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get '/login', to: 'customers#login_form'
   # post '/login', to: 'customer#login'
+  # just here for the streaks...
 end
