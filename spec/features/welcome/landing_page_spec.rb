@@ -10,7 +10,7 @@ RSpec.describe 'Landing Page', type: :feature do
 
         it 'has options to create a profile or log in' do 
             visit root_path
-save_and_open_page
+# save_and_open_page
             expect(page).to have_field :email
             expect(page).to have_field :password 
             expect(page).to have_button('login')
