@@ -42,4 +42,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_07_114339) do
 
   add_foreign_key "admins", "workorders"
   add_foreign_key "customers", "workorders"
+  # rename table from customers to users
 end
